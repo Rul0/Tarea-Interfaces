@@ -240,9 +240,16 @@
     complete_table();
 
     $('.selectable').click(function() {
-      $(this).toggleClass('selected');
-      //setear texto arbitrario
-      $(this).html("Agregado");
+
+      if ($(this).hasClass('selected')){
+        $(this).removeClass('selected');
+        $(this).html("");
+      }
+      else{
+        $(this).addClass('selected');
+        //setear texto arbitrario
+        $(this).html("Reservado");
+      }
     });
 
     $('#name-field').keypress(function(e) {

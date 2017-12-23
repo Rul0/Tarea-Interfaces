@@ -233,9 +233,15 @@
     complete_table();
 
     $('.selectable').click(function() {
-      $(this).toggleClass('selected');
-      //setear texto arbitrario
-      $(this).html("Reservado");
+      if ($(this).hasClass('selected')){
+        $(this).removeClass('selected');
+        $(this).html("");
+      }
+      else{
+        $(this).addClass('selected');
+        //setear texto arbitrario
+        $(this).html("Reservado");
+      }
     });
 
     $('#name-field').keypress(function(e) {
@@ -276,14 +282,17 @@
     });
 
     //llenar tabla con bloques llenos
-    $('#cell_1-2_Lunes').toggleClass('selected').html("Sin cupos");
-    $('#cell_11-12_Lunes').toggleClass('selected').html("Sin cupos");
-    $('#cell_7-8_Lunes').toggleClass('selected').html("Sin cupos");
-    $('#cell_1-2_Miercoles').toggleClass('selected').html("Sin cupos");
-    $('#cell_3-4_Jueves').toggleClass('selected').html("Sin cupos");
-    $('#cell_7-8_Viernes').toggleClass('selected').html("Sin cupos");
-    $('#cell_11-22_Jueves').toggleClass('selected').html("Sin cupos");
+    $('#cell_1-2_Martes').toggleClass('selected').html("Sin cupos");
+    $('#cell_11-12_Miercoles').toggleClass('selected').html("Sin cupos");
+    $('#cell_9-10_Lunes').toggleClass('selected').html("Sin cupos");
+    $('#cell_13-14_Jueves').toggleClass('selected').html("Sin cupos");
+    $('#cell_7-8_Martes').toggleClass('selected').html("Sin cupos");
+    $('#cell_11-22_Lunes').toggleClass('selected').html("Sin cupos");
     $('#cell_3-4_Lunes').toggleClass('selected').html("Sin cupos");
+    $('#cell_3-4_Viernes').toggleClass('selected').html("Sin cupos");
+    $('#cell_13-14_Viernes').toggleClass('selected').html("Sin cupos");
+    $('#cell_5-6_Lunes').toggleClass('selected').html("Sin cupos");
+    $('#cell_5-6_Viernes').toggleClass('selected').html("Sin cupos");
 
 
     $('#show-stats-button').click(function() {
